@@ -1,11 +1,11 @@
 :root {
-  --bg: #0a0908;
-  --bg-panel: #121110;
-  --line: #2a1f14;
-  --orange: #ef7a1c;
-  --orange-bright: #ff8c2b;
-  --white: #f5f2ec;
-  --gray: #a8a29a;
+  --bg: #14120f;
+  --bg-panel: #1c1a16;
+  --line: #3d2f1e;
+  --orange: #ff8a2e;
+  --orange-bright: #ffa64d;
+  --white: #ffffff;
+  --gray: #c4bdb2;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -180,6 +180,7 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 10px;
   border: 1px solid var(--line);
   margin-bottom: 16px;
+  filter: brightness(1.12) contrast(1.05) saturate(1.1);
 }
 
 .hero-inner { max-width: 90%; }
