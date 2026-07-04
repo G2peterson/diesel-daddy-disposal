@@ -91,6 +91,15 @@ button { font-family: inherit; cursor: pointer; }
   gap: 5px;
 }
 
+.email-link {
+  font-size: clamp(8px, 2.2vw, 10px);
+  font-weight: 600;
+  color: var(--gray);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .header-right {
   width: 56px;
   height: 56px;
@@ -137,7 +146,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* HERO PANEL */
 .hero-panel {
-  background: #d2b48c;
+  background: var(--bg);
   padding: 16px 26px 24px;
   justify-content: flex-start;
 }
