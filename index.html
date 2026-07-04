@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Diesel Daddy Junk Removal | Streetsboro, OH</title>
+<title>Diesel Dad Disposal.com | Streetsboro, OH</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,30 +13,48 @@
   <!-- ============ PERSISTENT HEADER (does not scroll) ============ -->
   <header class="site-header">
     <a href="#panel-hero" class="header-left" aria-label="Home">
-      <img src="garage_rolls.png" alt="Rolls the mascot truck in the Diesel Daddy garage">
+      <img src="garage_rolls.png" alt="Rolls the mascot truck in the Diesel Dad Disposal garage">
     </a>
 
     <div class="header-center">
-      <div class="logo-row">
-        <img class="logo" src="gear_logo.png" alt="Diesel Daddy gear logo">
-        <div>
-          <div class="brand-name">DIESEL DADDY</div>
-          <div class="brand-sub">JUNK REMOVAL</div>
-        </div>
-      </div>
+      <img class="wordmark" src="header_wordmark.png" alt="Diesel Dad Disposal dot com">
       <a class="phone-link" href="tel:+12349733026">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
         (234) 973-3026
       </a>
     </div>
 
-    <button class="header-right" aria-label="Menu">
-      <span></span><span></span><span></span>
+    <button class="header-right" id="headerMenuBtn" aria-label="Diesel Dad Disposal logo, tap for settings">
+      <img src="gear_logo.png" alt="Diesel Dad Disposal gear logo">
     </button>
   </header>
 
   <!-- ============ HORIZONTAL SCROLL BODY ============ -->
   <div class="scroller" id="scroller">
+
+    <!-- PANEL: LEGAL / SETTINGS (swipe-left destination) -->
+    <section class="panel legal-panel" id="panel-legal">
+      <h2>SETTINGS &amp; INFO</h2>
+      <div class="legal-list">
+        <button class="legal-row" type="button">
+          Privacy Policy
+          <span class="chev">›</span>
+        </button>
+        <button class="legal-row" type="button">
+          Terms of Service
+          <span class="chev">›</span>
+        </button>
+        <div class="legal-row cookie-row">
+          <span>Allow Cookies &amp; Tracking</span>
+          <label class="toggle">
+            <input type="checkbox" id="cookieToggle">
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+      <p class="legal-note">We only collect data if you opt in above. Nothing is tracked by default.</p>
+      <div class="swipe-hint">← back to the good stuff, swipe right</div>
+    </section>
 
     <!-- PANEL 0: HERO -->
     <section class="panel hero-panel" id="panel-hero">
@@ -112,6 +130,7 @@
 
   <!-- Dot indicators -->
   <div class="dots" id="dots">
+    <span class="dot"></span>
     <span class="dot active"></span>
     <span class="dot"></span>
     <span class="dot"></span>
@@ -168,12 +187,17 @@
   });
   dots.forEach((d, idx) => d.addEventListener('click', () => goTo(idx)));
 
+  const headerMenuBtn = document.getElementById('headerMenuBtn');
+  headerMenuBtn.addEventListener('click', () => goTo(0));
+
   // keyboard support
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') goTo(currentIndex() + 1);
     if (e.key === 'ArrowLeft') goTo(currentIndex() - 1);
   });
 
+  // default view on load: hero panel (index 1), not the legal panel
+  scroller.scrollLeft = scroller.clientWidth * 1;
   updateDots();
 </script>
 
