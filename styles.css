@@ -1,7 +1,7 @@
 :root {
-  --bg: #c9a022;
-  --bg-panel: #b8901e;
-  --line: #96741a;
+  --bg: #e6cd93;
+  --bg-panel: #dcc07f;
+  --line: #b8935f;
   --orange: #c9540c;
   --orange-bright: #ff8a2e;
   --white: #211a12;
@@ -454,3 +454,4 @@ button { font-family: inherit; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
